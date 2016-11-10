@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Context>
+    <Resource name="jdbc/brewerDB" auth="Container"
+              factory="org.apache.naming.factory.BeanFactory"
+              type="com.mchange.v2.c3p0.ComboPooledDataSource"
+              driverClass="org.postgresql.Driver"
+              jdbcUrl="jdbc:postgresql://localhost:5432/brewer"
+              user="postgres"
+              password="dev737469"
+              initialPoolSize="5"
+              minPoolSize="5"
+              maxPoolSize="5"
+    />
+</Context>
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Context>
+    <Resource name="jdbc/brewerDB" auth="Container"
+              factory="org.apache.naming.factory.BeanFactory"
+              type="com.mchange.v2.c3p0.ComboPooledDataSource"
+              driverClass="org.postgresql.Driver"
+              jdbcUrl="jdbc:postgresql://localhost:5432/brewer"
+              user="postgres"
+              password="dev737469"
+              inicialPoolSize="5"
+              minPoolSize="5"
+              maxPooSize="5"/>
+</Context>
+-->
+<!--<Configure id='wac' class="org.eclipse.jetty.webapp.WebAppContext">
+    <New id="JNDIResource" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg><Ref refid="wac"/></Arg>
+        <Arg>java:comp/env/jdbc/brewerDB</Arg>
+        <Arg>
+            <New class="com.mchange.v2.c3p0.ComboPooledDataSource">
+                <Set name="driverClass">org.postgresql.Driver</Set>
+                <Set name="jdbcUrl">jdbc:postgresql://localhost:5432/brewer</Set>
+                <Set name="user">postgres</Set>
+                <Set name="password">dev737469</Set>
+            </New>
+        </Arg>
+    </New>
+</Configure>-->

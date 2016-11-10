@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<!--<Configure id='wac' class="org.eclipse.jetty.webapp.WebAppContext">
+    <New id="JNDIResource" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg><Ref refid="wac"/></Arg>
+        <Arg>java:comp/env/jdbc/brewerDB</Arg>
+        <Arg>
+            <New class="com.mchange.v2.c3p0.ComboPooledDataSource">
+                <Set name="driverClass">org.postgresql.Driver</Set>
+                <Set name="jdbcUrl">jdbc:postgresql://localhost:5432/brewer</Set>
+                <Set name="user">postgres</Set>
+                <Set name="password">dev737469</Set>
+            </New>
+        </Arg>
+    </New>
+</Configure>!-->

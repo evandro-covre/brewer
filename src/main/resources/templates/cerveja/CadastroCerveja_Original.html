@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<div class="aw-layout-page">
+
+</div>
+
+    <h1>Thymeleaf Configurado</h1>
+
+    <!-- Código fonte para preenchimento do retorno fora do form
+    <div th:each="erro : ${#fields.detailedErrors('${cerveja.*}')}">
+        <span th:text="${erro.message}"></span>
+    </div>
+    -->
+
+    <form method="POST" th:object="${cerveja}">
+
+        <span th:text="${#fields.hasAnyErrors()}"></span>
+        <div th:each="erro : ${#fields.detailedErrors()}">
+            <span th:text="${erro.message}"></span>
+        </div>
+        <!-- O #fields é um objeto especial do Thymeleaf que indica se tem ou não algum erro no objeto desejado.
+            Como no início da página, não se sabe qual é o objeto desejado, definimos no form o objeto
+            que estaremos trabalhando th:object="${cerveja}
+         -->
+
+        <span th:text="${mensagem}"></span> <!-- o Thymeleaf intercepta a mensagem que foi inserida
+            no código fonte e coloca no texto da span através de th:text="${mensagem}" -->
+        <br>
+        <label for="sku">SKU</label>
+        <!-- através do atributo th:field="*{sku}" indicamos que o sku pertence ao objeto cerveja-->
+        <input type="text" id="sku" th:field="*{sku}">
+        <br>
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" th:field="*{nome}">
+        <br>
+
+        <label for="descricao">Descrição</label>
+        <input type="text" id="descricao" th:field="*{descricao}">
+        <br>
+
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>

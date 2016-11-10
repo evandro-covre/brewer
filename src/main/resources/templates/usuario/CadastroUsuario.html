@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="'layout/LayoutPadrao'">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors/bootstrap-switch.min.css}"/>
+</head>
+<body>
+    <section layout:fragment="conteudo">
+        <div class="page-header">
+            <div class="container-fluid">
+                <h1>Cadastro de Usuário</h1>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+<!--            <form method="post" th:object="${usuario}" class="form-vertical  js-form-loading">
+-->
+            <form method="post" class="form-vertical  js-form-loading">
+                <div class="row">
+                    <div class="col-sm-12  form-group">
+                        <label for="cNome">Nome</label>
+                        <input id="cNome" type="text" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label for="cEmail">E-mail</label>
+                        <input type="email" id="cEmail" class="form-control"/>
+                    </div>
+
+                    <div class="col-sm-2 form-group">
+                        <label for="cDtNascimento">Data Nascimento</label>
+                        <input type="text" id="cDtNascimento" class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-2 form-group">
+                        <label for="cSenha">Senha</label>
+                        <input type="password" id="cSenha" class="form-control"/>
+                    </div>
+
+                    <div class="col-sm-2 form-group">
+                        <label for="cConfirmacaoSenha">Confirmação da Senha</label>
+                        <input type="password" id="cConfirmacaoSenha" class="form-control"/>
+                    </div>
+
+                    <div class="col-sm-3 form-group">
+                        <label class="control-label">Situação</label>
+                        <div>
+                            <input type="checkbox" class="js-status" data-size="small" data-off-color="danger"
+                                   data-on-text="Ativo" data-off-text="Inativo"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6  form-group">
+                        <label class="control-label">Grupos de Acesso</label>
+                        <div>
+                            <div class="checkbox checkbox-inline">
+                                <input type="checkbox" id="cAdministrador" value="cAdmin">
+                                <label>Administrador</label>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="checkbox checkbox-inline">
+                                <input type="checkbox" id="cVendedor" value="cVendedor">
+                                <label>Vendedor</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn  btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-default">Cancelar</button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+</body>
+
+
+<th:block layout:fragment="javascript-extra">
+    <script th:src="@{/javascripts/vendors/bootstrap-switch.min.js}"></script>
+    <script>
+        $('.js-status').bootstrapSwitch();
+    </script>
+
+</th:block>
+
+</html>

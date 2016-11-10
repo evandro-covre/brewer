@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN">
+    <!-- Appenders são para onde serão enviados os logs, no caso console.
+        O PatternLayout define o formato da mensagem no log
+     -->
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!-- Indica que para o pacote com.algaworks.brewer.controller, o nível de log será INFO
+            para os demais será o definido abaixo, ou error
+         -->
+        <Logger name="com.algaworks.brewer" level="debug"/>
+        <Logger name="org.hibernate.SQL" level="debug"/>
+
+        <!-- o level é que define o que será apresentado ver documentação em
+            http://logging.apache.org/log4j/2.x/manual/configuration.html
+            http://logging.apache.org/log4j/2.x/manual/customloglevels.html
+            geralmente utilizado o TRACE
+        -->
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
