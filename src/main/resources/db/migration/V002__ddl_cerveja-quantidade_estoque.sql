@@ -1,1 +1,1 @@
-ALTER TABLE "public"."cerveja" ADD quantidade_estoque INT;
+ALTER TABLE cerveja ADD quantidade_estoque INT;

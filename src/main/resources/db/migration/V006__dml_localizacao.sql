@@ -27,8 +27,6 @@ insert into estado(est_id, est_sigla, est_nome) values(25, 'SE', 'Sergipe');
 insert into estado(est_id, est_sigla, est_nome) values(26, 'SP', 'São Paulo');
 insert into estado(est_id, est_sigla, est_nome) values(27, 'TO', 'Tocantins');
 
-alter sequence "estado_seq" increment 1 start 27 cache 1;
-
 insert into cidade(cid_id, est_id, cid_descr) values(1,7,'Brasília');
 insert into cidade(cid_id, est_id, cid_descr) values(2,1,'Rodrigues Alves');
 insert into cidade(cid_id, est_id, cid_descr) values(3,1,'Santa Rosa do Purus');
@@ -83,5 +81,3 @@ insert into cidade(cid_id, est_id, cid_descr) values(52,26,'Vista Alegre do Alto
 insert into cidade(cid_id, est_id, cid_descr) values(53,26,'Zacarias');
 insert into cidade(cid_id, est_id, cid_descr) values(54,27,'Abreulândia');
 insert into cidade(cid_id, est_id, cid_descr) values(55,27,'Aguiarnópolis');
-
-alter sequence "cidade_seq" increment 1 start 56 cache 1;

@@ -33,11 +33,6 @@ public class Cidade implements Serializable{
     @NotBlank(message = "Nome obrigatório")
     private String nome;
 
-    @Column(name="cid_ddd", length = 3, nullable = true)
-    @JsonIgnore
-    private String ddd;
-
-
     public Long getId() {
         return id;
     }
@@ -62,15 +57,7 @@ public class Cidade implements Serializable{
         this.nome = nome;
     }
 
-    public String getDdd() {
-        return ddd;
-    }
-
-    public void setDdd(String ddd) {
-        this.ddd = ddd;
-    }
-
-    @Override
+   @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
@@ -90,7 +77,6 @@ public class Cidade implements Serializable{
                 "id=" + id +
                 ", estado=" + estado +
                 ", nome='" + nome + '\'' +
-                ", ddd='" + ddd + '\'' +
                 '}';
     }
 }
